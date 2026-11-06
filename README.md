@@ -30,8 +30,8 @@ BiliLock 过滤演示
 
 ### 一键视频页过滤前后对比
 
-[![一键视频页过滤前](assets/video-before.png)](https://app.notion.com/p/README-c1e9c8216003827abcd701f7ed1e80d8?source=copy_link#4109c821600380e1be5be815f6ea870a)
-[![一键视频页过滤后](assets/video-after.png)](https://app.notion.com/p/README-c1e9c8216003827abcd701f7ed1e80d8?source=copy_link#4109c821600380deacb3db4345b7c844)
+[![一键视频页过滤前](assets/video-before.png)]
+[![一键视频页过滤后](assets/video-after.png)]
 
 一键视频页过滤前后对比
 
