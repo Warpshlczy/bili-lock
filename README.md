@@ -30,8 +30,8 @@ BiliLock 过滤演示
 
 ### 一键视频页过滤前后对比
 
-[![一键视频页过滤前](assets/video-before.png)]
-[![一键视频页过滤后](assets/video-after.png)]
+![一键视频页过滤前](assets/video-before.png)
+![一键视频页过滤后](assets/video-after.png)
 
 一键视频页过滤前后对比
 
