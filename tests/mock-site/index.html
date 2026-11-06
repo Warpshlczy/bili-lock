@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>哔哩哔哩 (゜-゜)つロ 干杯~-bilibili（模拟首页）</title>
+  <style>
+    body { font-family: system-ui, "PingFang SC", sans-serif; margin: 0; background: #f6f7f8; }
+    .bili-header { background: #fff; padding: 12px 24px; display: flex; gap: 18px; border-bottom: 1px solid #e3e5e7; }
+    .bili-header a { color: #18191c; text-decoration: none; font-size: 14px; }
+    .recommended-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 20px; max-width: 1280px; margin: 0 auto; }
+    .feed-card { background: #fff; border-radius: 8px; overflow: hidden; }
+    .bili-video-card__image--wrap { background: #d6d9dc; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #61666d; font-size: 13px; }
+    .bili-video-card__info { padding: 8px 10px; }
+    .banner-card { background: linear-gradient(90deg, #fb7299, #00a1d6); color: #fff; text-align: center; padding: 26px; margin: 20px auto; max-width: 1240px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="bili-header" id="biliMainHeader">
+    <a href="#">logo</a>
+    <a href="https://www.bilibili.com/v/douga/">动画</a>
+    <a href="https://www.bilibili.com/v/music/">音乐</a>
+    <a href="https://www.bilibili.com/v/kichiku/">鬼畜</a>
+    <a href="https://www.bilibili.com/v/game/">游戏</a>
+    <a href="https://www.bilibili.com/anime/">番剧</a>
+  </div>
+  <div class="banner-card">运营活动横幅（广告位 banner-card）</div>
+  <div class="recommended-container" id="i_cecream">
+    <div class="feed-card"><div class="bili-feed-card"><div class="bili-video-card is-rcmd"><div class="bili-video-card__wrap">
+      <a class="bili-video-card__image--link" href="https://www.bilibili.com/video/BV1000000KIC/"><div class="bili-video-card__image--wrap">鬼畜封面</div></a>
+      <div class="bili-video-card__info">【鬼畜】标准鬼畜视频 A</div></div></div></div></div>
+    <div class="feed-card"><div class="bili-feed-card"><div class="bili-video-card is-rcmd"><div class="bili-video-card__wrap">
+      <a class="bili-video-card__image--link" href="https://www.bilibili.com/video/BV2000000MUS/"><div class="bili-video-card__image--wrap">音乐封面</div></a>
+      <div class="bili-video-card__info">【音乐】标准音乐视频 B</div></div></div></div></div>
+    <div class="feed-card"><div class="bili-feed-card"><div class="bili-video-card is-ads"><div class="bili-video-card__wrap">
+      <a class="bili-video-card__image--link" href="https://www.bilibili.com/video/BV3000000AD1/"><div class="bili-video-card__image--wrap">广告封面</div></a>
+      <div class="bili-video-card__info">【广告】信息流广告卡片 is-ads</div></div></div></div></div>
+    <div class="feed-card"><div class="bili-feed-card"><div class="bili-video-card is-rcmd"><div class="bili-video-card__wrap">
+      <a class="bili-video-card__image--link" href="https://www.bilibili.com/video/BV3000000GAM/"><div class="bili-video-card__image--wrap">游戏封面</div></a>
+      <div class="bili-video-card__info">【游戏】标准游戏视频 C</div></div></div></div></div>
+    <div class="feed-card"><div class="bili-feed-card"><div class="bili-video-card is-rcmd"><div class="bili-video-card__wrap">
+      <a class="bili-video-card__image--link" href="https://www.bilibili.com/video/BV4000000FAV/"><div class="bili-video-card__image--wrap">收藏封面</div></a>
+      <div class="bili-video-card__info">【生活】已收藏的视频 FAV1</div></div></div></div></div>
+    <div class="feed-card"><div class="bili-feed-card"><div class="bili-video-card is-rcmd"><div class="bili-video-card__wrap">
+      <a class="bili-video-card__image--link" href="https://www.bilibili.com/video/BV5000000FAV/"><div class="bili-video-card__image--wrap">收藏封面</div></a>
+      <div class="bili-video-card__info">【知识】已收藏的视频 FAV2</div></div></div></div></div>
+  </div>
+
+  <script>window.BILILOCK_SIM_URL = "https://www.bilibili.com/";</script>
+  <script src="sim.js"></script>
+  <script src="../../src/lib/zones-data.js"></script>
+  <script src="../../src/lib/rules.js"></script>
+  <script src="../../src/lib/defaults.js"></script>
+  <script src="../../src/lib/selectors.js"></script>
+  <script src="../../src/content/net-shim.js"></script>
+  <script src="../../src/content/page-context.js"></script>
+  <script src="../../src/content/lock-screen.js"></script>
+  <script src="../../src/content/dom-cleaner.js"></script>
+  <script src="../../src/content/nav-guard.js"></script>
+  <script src="../../src/content/main.js"></script>
+</body>
+</html>

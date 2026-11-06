@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>【模拟视频页】标准视频 - 哔哩哔哩</title>
+  <style>
+    body { font-family: system-ui, "PingFang SC", sans-serif; margin: 0; background: #f6f7f8; }
+    .video-page-app { max-width: 1280px; margin: 0 auto; padding: 20px; display: flex; gap: 18px; }
+    .left { flex: 2; }
+    .right { flex: 1; }
+    #playerWrap { background: #000; color: #fff; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+    #danmukuBox { background: #fff; border-radius: 8px; padding: 12px; margin-top: 12px; }
+    .danmaku-box { display: none; }
+    #commentapp { background: #fff; border-radius: 8px; padding: 12px; margin-top: 12px; }
+    .right-container { background: #fff; border-radius: 8px; padding: 12px; }
+    .recommend-list-v1, .next-play { padding: 8px; background: #f0f1f2; border-radius: 6px; margin-bottom: 8px; }
+    #slide_ad { background: #ffd6e2; padding: 10px; border-radius: 8px; margin-top: 12px; }
+    .ad-report { background: #fff3cd; padding: 10px; border-radius: 8px; margin-top: 12px; }
+    h1 { font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="video-page-app" id="video-page-app">
+    <div class="left">
+      <h1>【模拟】这是一个标准视频页（含评论区/弹幕/推荐/广告位）</h1>
+      <div id="playerWrap">▶ 播放器（保留）</div>
+      <div id="danmukuBox">弹幕列表 #danmukuBox</div>
+      <div class="danmaku-box">弹幕容器 .danmaku-box</div>
+      <div id="commentapp">评论区 #commentapp（模拟 3 条评论）</div>
+      <div id="slide_ad" class="slide-ad-exp">横幅广告 #slide_ad</div>
+      <div class="ad-report">版位广告 .ad-report</div>
+    </div>
+    <div class="right right-container">
+      <div class="next-play">▶ 连播 .next-play</div>
+      <div class="recommend-list-v1">相关推荐 .recommend-list-v1（模拟 8 条）</div>
+    </div>
+  </div>
+
+  <script>
+    /* 模拟视频页 __INITIAL_STATE__（真实 B 站视频页内嵌同名字段，FR1-5 判定来源） */
+    window.__INITIAL_STATE__ = { videoData: { bvid: "BV1000000KIC", tid: 119, tname: "鬼畜" } };
+  </script>
+  <script>window.BILILOCK_SIM_URL = "https://www.bilibili.com/video/BV1000000KIC/";</script>
+  <script src="sim.js"></script>
+  <script src="../../src/lib/zones-data.js"></script>
+  <script src="../../src/lib/rules.js"></script>
+  <script src="../../src/lib/defaults.js"></script>
+  <script src="../../src/lib/selectors.js"></script>
+  <script src="../../src/content/net-shim.js"></script>
+  <script src="../../src/content/page-context.js"></script>
+  <script src="../../src/content/lock-screen.js"></script>
+  <script src="../../src/content/dom-cleaner.js"></script>
+  <script src="../../src/content/nav-guard.js"></script>
+  <script src="../../src/content/main.js"></script>
+</body>
+</html>

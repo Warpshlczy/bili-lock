@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>BiliLock 单元/集成测试 runner</title>
+  <style>
+    body { font-family: ui-monospace, Menlo, monospace; font-size: 13px; background: #10141a; color: #dbe2ea; padding: 24px; }
+    h1 { font-size: 16px; }
+    #summary { margin: 12px 0; font-size: 15px; }
+    .pass { color: #5bd08a; }
+    .fail { color: #ff6b6b; }
+    .case { padding: 3px 0; }
+    .detail { color: #9aa7b4; padding-left: 18px; font-size: 12px; }
+    .tag { color: #6b7683; }
+  </style>
+</head>
+<body>
+  <h1>🔒 BiliLock 测试（SRS 追溯矩阵 TC-01…TC-21 + 分区数据健全性）</h1>
+  <div id="summary">运行中…</div>
+  <div id="results"></div>
+  <div id="fixture" style="display:none"></div>
+
+  <!-- 与 manifest 相同顺序加载扩展真实脚本（不含 main.js —— 它会自动 boot） -->
+  <script src="../src/lib/zones-data.js"></script>
+  <script src="../src/lib/rules.js"></script>
+  <script src="../src/lib/defaults.js"></script>
+  <script src="../src/lib/selectors.js"></script>
+  <script src="../src/content/net-shim.js"></script>
+  <script src="../src/content/lock-screen.js"></script>
+  <script src="../src/content/dom-cleaner.js"></script>
+  <script src="../src/content/nav-guard.js"></script>
+  <script src="cases.js"></script>
+  <script>
+    (async function () {
+      // 同源标签页可能残留模拟站点的 sessionStorage 种子（bvidzone/config），先清空保证用例独立
+      try { sessionStorage.clear(); } catch (e) {}
+      var results = document.getElementById("results");
+      var pass = 0, fail = 0;
+      var html = [];
+      for (var i = 0; i < window.BILILOCK_CASES.length; i++) {
+        var c = window.BILILOCK_CASES[i];
+        var row = document.createElement("div");
+        row.className = "case";
+        var detail = "";
+        try {
+          await c.fn();
+          pass++;
+          row.innerHTML = '<span class="pass">✓ PASS</span> <span class="tag">[' + c.id + ']</span> ' + c.name;
+        } catch (e) {
+          fail++;
+          detail = '<div class="detail">↳ ' + String(e && e.message || e).replace(/</g, "&lt;") + "</div>";
+          row.innerHTML = '<span class="fail">✗ FAIL</span> <span class="tag">[' + c.id + ']</span> ' + c.name + detail;
+        }
+        results.appendChild(row);
+      }
+      var s = document.getElementById("summary");
+      s.innerHTML = '结果：<span class="' + (fail ? "fail" : "pass") + '">' + pass + " 通过 / " + fail + " 失败</span>，共 " + (pass + fail) + " 例";
+      window.BILILOCK_TEST_DONE = { pass: pass, fail: fail };
+    })();
+  </script>
+</body>
+</html>

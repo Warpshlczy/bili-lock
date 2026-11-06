@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>收藏夹 - 哔哩哔哩（模拟收藏夹页）</title>
+  <style>
+    body { font-family: system-ui, "PingFang SC", sans-serif; margin: 0; background: #f6f7f8; }
+    h1 { font-size: 18px; padding: 0 24px; }
+    .fav-list-main { max-width: 1100px; margin: 0 auto; padding: 12px 24px; }
+    .items { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .item { background: #fff; border-radius: 8px; overflow: hidden; }
+    .item a { text-decoration: none; color: #18191c; font-size: 13px; }
+    .cover { background: #d6d9dc; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #61666d; }
+  </style>
+</head>
+<body>
+  <h1>我的收藏夹（模拟 space.bilibili.com/9527/favlist）</h1>
+  <div class="fav-list-main">
+    <div class="items">
+      <div class="item"><a href="https://www.bilibili.com/video/BV4000000FAV/"><div class="cover">收藏封面</div>已收藏【音乐】FAV1</a></div>
+      <div class="item"><a href="https://www.bilibili.com/video/BV5000000FAV/"><div class="cover">收藏封面</div>已收藏【知识】FAV2</a></div>
+      <div class="item"><a href="https://www.bilibili.com/video/BV1000000KIC/"><div class="cover">收藏封面</div>已收藏【鬼畜】KIC（屏蔽鬼畜时应隐藏）</a></div>
+    </div>
+  </div>
+
+  <script>window.BILILOCK_SIM_URL = "https://space.bilibili.com/9527/favlist";</script>
+  <script src="sim.js"></script>
+  <script src="../../dist/bililock-v1.0.6-bundle/bundle-main.js"></script>
+  <script src="../../dist/bililock-v1.0.6-bundle/bundle-isolated.js"></script>
+</body></body>
+</html>
