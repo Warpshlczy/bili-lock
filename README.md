@@ -2,7 +2,7 @@
   <img src="assets/logo.jpg" width="116" alt="BiliLock 图标：电视与锁">
 </p>
 
-<h1 align="center">BiliLock · B 站上锁</h1>
+<h1 align="center">BiliLock · 给B站上锁</h1>
 
 <p align="center"><strong>打开视频只为学习和目标，你有权把时间掌握在自己手中。</strong></p>
 
