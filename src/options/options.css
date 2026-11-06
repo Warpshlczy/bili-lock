@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #f4f6f8; color: #1c2126;
+  font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 14px;
+}
+main { max-width: 760px; margin: 0 auto; padding: 32px 20px 60px; }
+header h1 { font-size: 22px; margin: 0 0 6px; }
+.desc { color: #6b7280; font-size: 13px; margin: 0 0 18px; }
+section {
+  background: #fff; border: 1px solid #e7eaee; border-radius: 12px;
+  padding: 18px 20px; margin-bottom: 14px;
+}
+h2 { font-size: 15px; margin: 0 0 8px; }
+.hint { color: #8b939c; font-size: 12px; }
+section > .hint { margin: 0 0 12px; }
+.toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+button {
+  border: 1px solid #dfe3e8; background: #f7f8fa; border-radius: 7px;
+  padding: 6px 14px; font-size: 13px; cursor: pointer;
+}
+button:hover { background: #eef1f4; }
+.zone-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px 8px; }
+.zone { display: flex; gap: 6px; align-items: center; padding: 4px 6px; border-radius: 6px; cursor: pointer; }
+.zone:hover { background: #f4f6f8; }
+.zone input { accent-color: #fb7299; }
+.switch { display: flex; gap: 9px; align-items: flex-start; padding: 6px 0; cursor: pointer; }
+.switch input { accent-color: #00a1d6; margin-top: 2px; }
+.fav-box { margin-top: 10px; padding: 12px; background: #f7f9fb; border-radius: 8px; }
+.fav-box button { margin: 6px 0; }
+input[type="text"] {
+  width: 100%; padding: 9px 12px; border: 1px solid #dfe3e8; border-radius: 8px; font-size: 14px;
+}
+footer {
+  display: flex; justify-content: space-between; color: #8b939c; font-size: 12px; padding: 8px 4px;
+}

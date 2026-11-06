@@ -1,0 +1,45 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  width: 330px; margin: 0; padding: 14px 14px 10px;
+  font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 13px; color: #1c2126; background: #fff;
+}
+.head { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+.logo { font-size: 26px; }
+h1 { font-size: 16px; margin: 0; }
+h1 .sub { font-size: 11px; color: #888; font-weight: 400; }
+.status { font-size: 11px; color: #00a1d6; margin-top: 2px; }
+h2 { font-size: 12px; color: #6b7280; margin: 0 0 6px; font-weight: 600; }
+.block { border-top: 1px solid #f0f2f5; padding: 10px 0; }
+.block:first-of-type { border-top: 0; }
+.switch { display: flex; align-items: center; gap: 8px; padding: 3px 0; cursor: pointer; }
+.switch input { accent-color: #00a1d6; }
+.zone-tools { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; }
+.zone-tools button {
+  border: 1px solid #dfe3e8; background: #f7f8fa; border-radius: 6px;
+  padding: 3px 10px; font-size: 12px; cursor: pointer;
+  white-space: nowrap; flex: 0 0 auto;
+}
+.zone-tools button:hover { background: #eef1f4; }
+.zone-tools .hint { font-size: 10px; color: #9aa1a9; }
+.zone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px 4px; }
+.zone { display: flex; align-items: center; gap: 4px; font-size: 12px; padding: 2px 0; cursor: pointer; }
+.zone input { accent-color: #fb7299; }
+.fav-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 6px; }
+.fav-row button, #openOptions { border: 0; background: none; color: #00a1d6; cursor: pointer; font-size: 12px; }
+.hint { font-size: 11px; color: #9aa1a9; }
+.ver { font-size: 10px; color: #b0b7bf; margin-top: 1px; }
+.diag {
+  margin: 8px 0 0; padding: 8px; background: #f7f8fa; border-radius: 6px;
+  font-size: 11px; line-height: 1.7; white-space: pre-wrap; word-break: break-all;
+  color: #444c55; display: none; max-height: 200px; overflow: auto;
+}
+#diagBtn {
+  border: 1px solid #dfe3e8; background: #f7f8fa; border-radius: 6px;
+  padding: 4px 10px; font-size: 12px; cursor: pointer;
+}
+footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid #f0f2f5; padding-top: 8px; font-size: 11px; color: #9aa1a9;
+}

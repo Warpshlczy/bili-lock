@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "BiliLock — B站上锁",
+  "version": "1.0.7",
+  "minimum_chrome_version": "111",
+  "description": "把 bilibili 网页端的算法推送上锁：分区屏蔽、去广告、去评论区/推荐、只看收藏夹、一键过滤视频。全本地处理。",
+  "icons": {
+    "16": "assets/icon16.png",
+    "32": "assets/icon32.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "cookies"
+  ],
+  "host_permissions": [
+    "*://*.bilibili.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "BiliLock — B站上锁",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "32": "assets/icon32.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.bilibili.com/*"
+      ],
+      "js": [
+        "lib/zones-data.js",
+        "lib/rules.js",
+        "lib/defaults.js",
+        "lib/selectors.js",
+        "content/net-shim.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "*://*.bilibili.com/*"
+      ],
+      "js": [
+        "lib/zones-data.js",
+        "lib/rules.js",
+        "lib/defaults.js",
+        "lib/selectors.js",
+        "content/page-context.js",
+        "content/lock-screen.js",
+        "content/dom-cleaner.js",
+        "content/nav-guard.js",
+        "content/main.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>BiliLock 设置</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🔒 BiliLock · B 站上锁</h1>
+      <p class="desc">把 bilibili 网页端的算法推送上锁，只保留你需要的部分。所有处理仅在本机生效，不上传任何数据。</p>
+    </header>
+
+    <section>
+      <h2>① 分区上锁（R1/R4）</h2>
+      <p class="hint">勾选的分区：推送流卡片删除、分区频道页上锁、任何入口点击被拦截并提示。只想看某个分区？点「反选」后取消勾选它即可。</p>
+      <div class="toolbar">
+        <button id="zoneAll">全选</button>
+        <button id="zoneInvert">反选</button>
+        <button id="zoneNone">清空</button>
+        <span class="hint" id="zoneCount"></span>
+      </div>
+      <div class="zone-grid" id="zoneGrid"></div>
+    </section>
+
+    <section>
+      <h2>② 去广告（R2）</h2>
+      <label class="switch"><input type="checkbox" id="removeAds" /><span>移除首页与视频页所有被标记为广告的元素（信息流广告卡片、版位广告、横幅）</span></label>
+    </section>
+
+    <section>
+      <h2>③ 视频页（R3/R6）</h2>
+      <label class="switch"><input type="checkbox" id="hideComments" /><span>去掉评论区</span></label>
+      <label class="switch"><input type="checkbox" id="hideRecommend" /><span>去掉视频推荐（相关推荐 / 连播 / 右栏）</span></label>
+      <label class="switch"><input type="checkbox" id="pureVideoMode" /><span>一键过滤视频 —— 只留播放器与播放器自带配置（弹幕、评论区、推荐全部消失）</span></label>
+    </section>
+
+    <section>
+      <h2>④ 只看收藏夹（R5）</h2>
+      <label class="switch"><input type="checkbox" id="favoritesOnly" /><span>只看收藏夹 —— 收藏夹以外的 B 站站点全部显示上锁页，仅可访问收藏夹内容（收藏夹页内同样应用分区屏蔽）</span></label>
+      <div class="fav-box">
+        <div id="favDetail" class="hint">收藏夹缓存：未知</div>
+        <button id="favRefresh">重新收集收藏夹</button>
+        <p class="hint">收集使用 B 站官方接口并携带你自己的登录态（SESSDATA），数据仅保存在本机。需要先在浏览器登录 B 站。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>⑤ 上锁页文案</h2>
+      <input type="text" id="lockMessage" placeholder="这里已被 BiliLock 上锁" />
+    </section>
+
+    <footer>
+      <span id="saveHint">更改即时生效</span>
+      <span>v1.0 · 数据源 bilibili-API-collect 分区表 v1/v2</span>
+    </footer>
+  </main>
+
+  <script src="../lib/zones-data.js"></script>
+  <script src="../lib/rules.js"></script>
+  <script src="../lib/defaults.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
